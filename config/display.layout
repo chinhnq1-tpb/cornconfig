@@ -1,0 +1,18 @@
+
+/ {
+    chosen {
+        zmk,display = &oled_display;
+    };
+
+    oled_display: display {
+        compatible = "zmk,display";
+        label = "OLED Display";
+
+        child-panel {
+            compatible = "zmk,display-panel";
+            width = <128>;
+            height = <32>;
+            widgets = <&layer_status &battery_status &wpm_status>;
+        };
+    };
+};
